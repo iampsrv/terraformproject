@@ -6,7 +6,7 @@ resource "aws_instance" "web" {
   associate_public_ip_address = true
   user_data                   = file("start.sh")
   tags = {
-    Name = "dev-ec2"
+    Name = "dev-env"
   }
 }
 
@@ -18,7 +18,7 @@ resource "aws_instance" "web1" {
   security_groups             = [aws_security_group.mysg.id]
   user_data                   = file("start.sh")
   tags = {
-    Name = "test-ec2"
+    Name = "test-env"
   }
 }
 
@@ -30,6 +30,7 @@ resource "aws_instance" "web2" {
   associate_public_ip_address = true
   user_data                   = file("start.sh")
   tags = {
-    Name = "prod-ec2"
+    Name = "prod-env"
   }
 }
+
